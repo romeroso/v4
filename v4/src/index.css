@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-background-dark text-neutral-100 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-dark;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-hover focus:ring-primary;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary text-white hover:bg-secondary-hover focus:ring-secondary;
+  }
+  
+  .btn-outline {
+    @apply btn border border-neutral-700 text-neutral-200 hover:border-neutral-500 hover:text-white;
+  }
+
+  .card {
+    @apply bg-background-light p-5 rounded-2xl border border-neutral-900;
+  }
+
+  .input-field {
+    @apply bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200;
+  }
+
+  .health-metric-card {
+    @apply card hover:border-opacity-100 transition-all duration-300 hover:shadow-lg;
+  }
+
+  .metric-heart {
+    @apply hover:border-accent-heart;
+  }
+
+  .metric-sleep {
+    @apply hover:border-accent-sleep;
+  }
+
+  .metric-oxygen {
+    @apply hover:border-accent-oxygen;
+  }
+
+  .metric-activity {
+    @apply hover:border-accent-activity;
+  }
+
+  .metric-stress {
+    @apply hover:border-accent-stress;
+  }
+}
+
+/* Animations and transitions */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
